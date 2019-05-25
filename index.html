@@ -5,68 +5,95 @@
   <title>Console Tricks!</title>
 </head>
 <body>
-
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+<style>
+/*.small {*/
+/*  color: black;*/
+/*  font-size: 12px;*/
+/*}*/
+/*  .big {*/
+/*    color: #BADA55;*/
+/*    font-size: 50px;*/
+/*  }*/
+p {
+  text-align: center;
+  margin-top: 120px;
+  font-size: 12px;
+}
+  
+</style>
+  <p onClick="makeBig()">×BREAK×DOWN×</p>
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
-    function makeGreen() {
-      const p = document.querySelector('p');
-      p.style.color = '#BADA55';
-      p.style.fontSize = '50px';
-    }
-    // Regular
-    console.log('hello')
-    // Interpolated
-    console.log('hello I am a %s string!', '+poop');
-    const backtick = 'awesome!'
-    console.log(`hello I am an ${backtick} string!`);
-    // Styled
-    console.log('%c hello I am a styled string!', 'font-size: 14px; color: blue;')
-    // warning!
-    console.warn('warning!');
-    // Error :|
-     console.error('error!');
-    // Info
-     console.info('logs information to the console!')
-    // Testing
-    const p = document.querySelector('p');
-    console.assert(p.classList.contains('ouch'), 'Not present')
-     console.assert(1 === 2, 'That is wrong!')
-    // clearing
-    // console.clear();
-    // Viewing DOM Elements
-    console.log(p);
-    // console.dir(p);
-    // Grouping together
-    dogs.forEach(dog => {
-      console.groupCollapsed(`${dog.name}`);
-      console.log(`This is ${dog.name}`);
-      console.log(`${dog.name} is ${dog.age} years old`);
-      console.log(`${dog.name} is ${dog.age * 7} years old`);
-      console.groupEnd(`${dog.name}`);
-    })
-    // counting
-    console.count('Adamu');
-    console.count('TJ');
-    console.count('Adamu');
-    console.count('Adamu');
-    console.count('TJ');
-    console.count('Adamu');
-    console.count('Adamu');
-    console.count('Biggy');
-    console.count('Adamu');
-    // timing
-    console.time('fetching data');
-    fetch('https://api.github.com/users/dankore')
-    .then(data => data.json())
-    .then(data => {
-      console.timeEnd('fetching data');
-      console.log(data);
-    })
     
-    //Table
-    console.table(dogs);
+    const p = document.querySelector('p');
+    
+    function makeBig() {
+      if(p.style.fontSize === '12px') {
+        p.style.fontSize = '50px';
+        p.style.color = 'blue';
+      } else { p.style.fontSize = '12px'; p.style.color = 'black'}
+      
+      console.log(p)
+      
+    }
+    
+    // function makeBig() {
+    //   const big = document.querySelector('.big');
+    //   big.classList.toggle('small')
+    // }
+    // // Regular
+    // console.log('hello')
+    // // Interpolated
+    // console.log('hello I am a %s string!', '+poop');
+    // const backtick = 'awesome!'
+    // console.log(`hello I am an ${backtick} string!`);
+    // // Styled
+    // console.log('%c hello I am a styled string!', 'font-size: 14px; color: blue;')
+    // // warning!
+    // console.warn('warning!');
+    // // Error :|
+    // console.error('error!');
+    // // Info
+    // console.info('logs information to the console!')
+    // // Testing
+    // const p = document.querySelector('p');
+    // console.assert(p.classList.contains('ouch'), 'Not present')
+    // console.assert(1 === 2, 'That is wrong!')
+    // // clearing
+    // // console.clear();
+    // // Viewing DOM Elements
+    // console.log(p);
+    // // console.dir(p);
+    // // Grouping together
+    // dogs.forEach(dog => {
+    //   console.groupCollapsed(`${dog.name}`);
+    //   console.log(`This is ${dog.name}`);
+    //   console.log(`${dog.name} is ${dog.age} years old`);
+    //   console.log(`${dog.name} is ${dog.age * 7} years old`);
+    //   console.groupEnd(`${dog.name}`);
+    // })
+    // // counting
+    // console.count('Adamu');
+    // console.count('TJ');
+    // console.count('Adamu');
+    // console.count('Adamu');
+    // console.count('TJ');
+    // console.count('Adamu');
+    // console.count('Adamu');
+    // console.count('Biggy');
+    // console.count('Adamu');
+    // // timing
+    // console.time('fetching data');
+    // fetch('https://api.github.com/users/dankore')
+    // .then(data => data.json())
+    // .then(data => {
+    //   console.timeEnd('fetching data');
+    //   console.log(data);
+    // })
+    
+    // //Table
+    // console.table(dogs);
   </script>
 </body>
 </html>
